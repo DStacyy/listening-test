@@ -1,0 +1,17 @@
+{
+  "audioId": 1,
+  "questions": [
+    {
+      "id": 1,
+      "text": "CONTOH - ganti dengan soal nomor 1 dari PDF. What is the conversation mainly about?",
+      "options": ["Opsi A", "Opsi B", "Opsi C", "Opsi D"],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "text": "CONTOH - ganti dengan soal nomor 2 dari PDF. Where does the speaker work?",
+      "options": ["Opsi A", "Opsi B", "Opsi C", "Opsi D"],
+      "answer": "A"
+    }
+  ]
+}

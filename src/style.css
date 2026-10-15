@@ -1,0 +1,69 @@
+:root {
+  --ink: #14213d;
+  --paper: #f2f5f7;
+  --line: #c9d3dc;
+  --signal: #ffc83d;
+  --ok: #0f766e;
+  --bad: #b3261e;
+  --muted: #5b6b7c;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.55; }
+main { max-width: 720px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+h1 { font-size: 2rem; line-height: 1.15; margin: 1rem 0 .25rem; letter-spacing: -.02em; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; }
+a { color: inherit; }
+code { background: #e3e9ee; padding: 0 .3em; border-radius: 3px; }
+.muted, .lead { color: var(--muted); }
+.top { background: var(--ink); }
+.brand { display: block; max-width: 720px; margin: 0 auto; padding: .9rem 1rem; color: var(--signal); font-weight: 800; text-decoration: none; letter-spacing: .01em; }
+.back { display: inline-block; margin-top: .5rem; color: var(--muted); }
+
+/* daftar audio: urutannya memang berurutan 1-10, jadi nomor dipakai */
+.tracklist { list-style: none; padding: 0; margin: 1.5rem 0; border-top: 2px solid var(--ink); }
+.tracklist a { display: grid; grid-template-columns: 3rem 1fr auto; align-items: baseline; gap: .5rem; padding: .9rem .25rem; border-bottom: 1px solid var(--line); text-decoration: none; }
+.tracklist a:hover, .tracklist a:focus-visible { background: #fff; outline: none; box-shadow: inset 4px 0 0 var(--signal); padding-left: .75rem; }
+.num { font-size: 1.6rem; font-weight: 800; }
+.name { font-weight: 600; }
+.status { color: var(--muted); font-size: .9rem; text-align: right; }
+
+button { font: inherit; padding: .45rem .8rem; border: 1.5px solid var(--ink); background: #fff; color: var(--ink); border-radius: 4px; cursor: pointer; }
+button:hover { background: #e9eef2; }
+button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--signal); outline-offset: 1px; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.primary, button.active { background: var(--ink); color: #fff; }
+button.link { border: 0; background: none; color: var(--bad); padding: 0 .25rem; text-decoration: underline; }
+
+.player { background: #fff; border: 1.5px solid var(--ink); padding: 1rem; margin: 1rem 0 1.5rem; }
+.player audio { width: 100%; }
+.player-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+.spacer { flex: 1; }
+
+.question { border: 0; border-top: 1px solid var(--line); padding: 1rem 0; margin: 0; }
+.question legend { font-weight: 700; padding: 0 0 .5rem; float: left; width: 100%; }
+.option { display: flex; gap: .6rem; align-items: baseline; clear: both; padding: .45rem .6rem; margin: .2rem 0; border: 1.5px solid transparent; border-radius: 4px; cursor: pointer; }
+.option:hover { background: #fff; }
+.option.correct { border-color: var(--ok); background: #e3f3f1; }
+.option.wrong { border-color: var(--bad); background: #fbe9e7; }
+
+.actions { display: flex; align-items: center; gap: 1rem; margin: 1rem 0; }
+.result { background: var(--signal); padding: .75rem 1rem; justify-content: space-between; }
+.banner { background: #fff; border-left: 5px solid var(--signal); padding: .75rem 1rem; margin: 1rem 0; }
+
+textarea, input:not([type="radio"]) { font: inherit; width: 100%; padding: .55rem .7rem; border: 1.5px solid var(--line); border-radius: 4px; background: #fff; color: var(--ink); }
+.vocab-form { display: grid; grid-template-columns: 1fr 1fr auto; gap: .5rem; }
+.vocab { list-style: none; padding: 0; }
+.vocab li { display: flex; gap: .75rem; padding: .4rem 0; border-bottom: 1px solid var(--line); }
+.vocab li span { flex: 1; color: var(--muted); }
+
+@media (max-width: 520px) {
+  .vocab-form { grid-template-columns: 1fr; }
+  .tracklist a { grid-template-columns: 2.2rem 1fr; }
+  .status { grid-column: 2; text-align: left; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  button, .tracklist a { transition: background .15s, box-shadow .15s; }
+}
